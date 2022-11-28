@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n'
 
+import ReloadPwa from './components/ReloadPWA.vue'
 import TheHeader from './components/TheHeader.vue'
 import TheFooter from './components/TheFooter.vue'
 // import TheLogo from './components/TheLogo.vue'
@@ -18,6 +19,7 @@ const { t } = useI18n()
 </script>
 
 <template>
+  <reload-pwa></reload-pwa>
   <the-header></the-header>
 
   <main>

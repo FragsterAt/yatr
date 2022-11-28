@@ -7,6 +7,8 @@ import './assets/main.sass'
 import messages from './i18n/index.js'
 
 const i18n = createI18n({
+  locale: navigator.language,
+  fallbackLocale: 'en',
   legacy: false,
   messages
 })

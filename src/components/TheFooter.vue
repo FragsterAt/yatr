@@ -7,6 +7,7 @@ function setLocale(l) {
 }
 </script>
 
+<!-- https://emojipedia.org/flags/ -->
 <template>
   <footer>
     <button @click="setLocale('ru')">🇷🇺</button>

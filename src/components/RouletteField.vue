@@ -5,9 +5,10 @@ import RouletteFieldSector from './RouletteFieldSector.vue'
 import RouletteIndicator from './RouletteIndicator.vue'
 
 const { t } = useI18n({
-  sharedMessages: {ru: { hand: 'рука', foot: 'нога', left: 'Левая', right: 'Правая'}}
+  sharedMessages: {
+    ru: { hand: 'рука', foot: 'нога', left: 'Левая', right: 'Правая'}
+  }
 })
-
 
 const svg = ref(null)
 const style = ref({
@@ -118,6 +119,6 @@ function getImageUrl(name) {
   height: 10px
   margin: 0 auto
   display: block
-  object-fit: contain
+  user-select: none
 
 </style>
