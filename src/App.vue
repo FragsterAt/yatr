@@ -39,6 +39,8 @@ const { t } = useI18n()
 main
   flex-grow: 1
   overflow: hidden
+  display: flex
+  align-items: center
 section
   text-align: center
   font-weight: bolder
