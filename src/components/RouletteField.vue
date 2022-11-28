@@ -49,8 +49,11 @@ let startTime = performance.now();
 let startAngle = 0;
 let deltaAngle = 0
 const animationDuration = 1000
+let animationActive = false
 
 function rotateRoulette () {
+  if (animationActive) return;
+  animationActive = true;
   startAngle = angle.value
   startTime = performance.now();
   deltaAngle = Math.random() * maxAngle;
@@ -75,6 +78,7 @@ function updateActiveSector () {
   if (duration < 1) {
     requestAnimationFrame(updateActiveSector)
   } else {
+    animationActive = false;
     emit('change', sectors[activeSector.value])
   }
 }
