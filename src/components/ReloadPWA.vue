@@ -56,6 +56,9 @@ async function close () {
   background-color: #80FF80
   border-radius: 0.25rem
   justify-content: space-between
+  &:last-child
+    display: flex
+    gap: 1rem
 
 
 </style>
