@@ -4,11 +4,7 @@ import { useI18n } from 'vue-i18n'
 import RouletteFieldSector from './RouletteFieldSector.vue'
 import RouletteIndicator from './RouletteIndicator.vue'
 
-const { t } = useI18n({
-  sharedMessages: {
-    ru: { hand: 'рука', foot: 'нога', left: 'Левая', right: 'Правая'}
-  }
-})
+const { t } = useI18n()
 
 const svg = ref(null)
 const style = ref({
@@ -89,6 +85,13 @@ function getImageUrl(name) {
 }
 
 </script>
+
+<i18n lang="yaml" locale="ru">
+  hand: рука
+  foot: нога
+  left: Левая
+  right: Правая
+</i18n>
 
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img"
