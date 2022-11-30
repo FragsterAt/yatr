@@ -1,5 +1,5 @@
 <template>
-  <div v-if="offlineReady || needRefresh" id="pwa" role="alert">
+  <div v-if="show" id="pwa" role="alert">
     <div>
       <span v-if="offlineReady">{{ t('app-ready') }}</span>
       <span v-else>{{ t('need-reload') }}</span>
@@ -32,17 +32,20 @@ ru:
 
 <script setup>
 import { useRegisterSW } from "virtual:pwa-register/vue"
-import { nextTick } from "vue";
+import { nextTick, computed, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n()
 
 const { offlineReady, needRefresh, updateServiceWorker } = useRegisterSW()
+const show = computed(() => offlineReady.value || needRefresh.value)
+watch(show, async () => {
+  await nextTick() // ждем обновления DOM
+  window.dispatchEvent(new Event('resize')) // чтобы пересчитался размер рулетки
+})
 async function close () {
   offlineReady.value = false
   needRefresh.value = false
-  await nextTick() // ждем обновления DOM
-  window.dispatchEvent(new Event('resize')) // чтобы пересчитался размер рулетки
 }
 
 </script>
@@ -56,9 +59,9 @@ async function close () {
   background-color: #80FF80
   border-radius: 0.25rem
   justify-content: space-between
-  &:last-child
+  div:last-child
     display: flex
-    gap: 1rem
+    gap: 0.25rem
 
 
 </style>
