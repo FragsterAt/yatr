@@ -13,7 +13,7 @@ const angle = 60
 
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img"
-    viewBox="-110 -110 220 220" id="logo" preserveAspectRatio="xMinYMin slice" ref="svg" :style="style"
+    viewBox="-110 -110 220 220" id="logo" preserveAspectRatio="xMinYMin slice" ref="svg"
     width="1024"
     height="1024">
     <roulette-field-sector v-for="(sector, i) in sectors" :key="sector.color" :sectorNumber="i"

@@ -7,6 +7,7 @@ import TheHeader from './components/TheHeader.vue'
 import TheFooter from './components/TheFooter.vue'
 // import TheLogo from './components/TheLogo.vue'
 import RouletteField from './components/RouletteField.vue'
+// import IndicatorDebug from './components/IndicatorDebug.vue'
 
 const data = ref(null)
 
@@ -32,6 +33,7 @@ const { t } = useI18n()
   <the-footer></the-footer>
 
   <!-- <the-logo></the-logo> -->
+  <!-- <indicator-debug></indicator-debug> -->
 </template>
 
 <style lang="sass">

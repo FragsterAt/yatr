@@ -50,7 +50,6 @@ let animationActive = false
 
 function rotateRoulette () {
   if (animationActive) return;
-  animationActive = true;
   startAngle = angle.value
   startTime = performance.now();
   deltaAngle = Math.random() * maxAngle;
@@ -111,8 +110,8 @@ function getImageUrl(name) {
       <text x="0" y="16" text-anchor="middle" font-size="8">{{t(limbSector.limb)}}</text>
     </g>
     <roulette-field-sector v-for="(sector, i) in sectors" :key="sector.color" :sectorNumber="i"
-      :active="i === activeSector" :color="sector.color" @click="sector.active = !sector.active" />
-    <roulette-indicator :angle="angle" :animation-duration="animationDuration"/>
+      :active="i === activeSector" :color="sector.color" />
+    <roulette-indicator :angle="angle" :animation-duration="animationDuration" @beginEvent="animationActive = true" @endEvent="animationActive = false"/>
   </svg>
 </template>
 

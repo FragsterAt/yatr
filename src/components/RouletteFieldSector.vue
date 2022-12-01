@@ -45,10 +45,7 @@ const opacity = computed(() => props.active ? 1 : 0.5)
 </script>
 
 <template>
-  <g>
-    <path :d="path" fill="currentColor" :class="color" :opacity="opacity"/>
-    <!-- <circle :cx="xC" :cy="yC" r="1" fill="red"/> -->
-  </g>
+  <path :d="path" fill="currentColor" :class="color" :opacity="opacity"/>
 </template>
 
 <style lang="sass">
