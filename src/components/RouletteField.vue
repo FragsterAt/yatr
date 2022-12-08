@@ -50,11 +50,18 @@ let animationActive = false
 
 function rotateRoulette () {
   if (animationActive) return;
+
   startAngle = angle.value
   startTime = performance.now();
   deltaAngle = Math.random() * maxAngle;
   angle.value += deltaAngle
   direction = -direction
+
+  const $statUri = import.meta.env.VITE_SPIN_URI
+  if ($statUri) {
+    fetch($statUri, {method: 'post', credentials: 'include'})
+  }
+
   requestAnimationFrame(updateActiveSector)
 }
 
