@@ -22,9 +22,12 @@ export default defineConfig({
       base: "/",
       srcDir: "src",
       filename: "sw.js",
-      includeAssets: ["/favicon.ico"],
+      includeAssets: ["/favicon.ico", '**/*.{svg,png}'],
       strategies: "injectManifest",
       manifest,
+      workbox: {
+        globPatterns: ['**/*.{svg,png,js,css,html}'],
+      }
     })],
   resolve: {
     alias: {
