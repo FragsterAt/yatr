@@ -24,8 +24,11 @@ export default defineConfig({
       filename: "sw.js",
       includeAssets: ["/favicon.ico", '**/*.{svg,png}'],
       strategies: "injectManifest",
+      devOptions: {
+        enabled: true
+      },
       manifest,
-      workbox: {
+      injectManifest: {
         globPatterns: ['**/*.{svg,png,js,css,html}'],
       }
     })],
