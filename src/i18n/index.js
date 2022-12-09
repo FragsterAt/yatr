@@ -9,6 +9,7 @@ export default {
     yellow: 'on yellow',
     green: 'on green',
     blue: 'on blue',
+    title: ['Yet', 'Another', 'Twister', 'Roulette']
   },
   ru: {
     'touch-to-start': 'Коснись рулетки чтобы начать',
@@ -20,5 +21,6 @@ export default {
     yellow: 'на желтый',
     green: 'на зеленый',
     blue: 'на синий',
+    title: ['Еще', 'Одна', 'Рулетка для', 'Твистера']
   }
 }
